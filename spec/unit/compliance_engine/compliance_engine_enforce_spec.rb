@@ -21,6 +21,7 @@ describe 'compliance_markup', type: :class do
   on_supported_os.each do |os, os_facts|
     context "on #{os}" do
       let(:facts){ os_facts }
+      let(:node){ 'compliance-test' }
 
       compliance_profiles.each do |target_profile|
         context "with compliance profile '#{target_profile}'" do
